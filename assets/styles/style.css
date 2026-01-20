@@ -1,0 +1,134 @@
+/* 1. Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margins */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Set core body defaults */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100svh;
+  /* Modern dynamic viewport unit */
+  font-family: system-ui, sans-serif;
+}
+
+/* 4. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Create a root stacking context (helpful for frameworks like React/Next.js) */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* 8. Modern Accessibility & Smoothness */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* 9. Custom Global Styles */
+body {
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.main-nav-top {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.main-nav-top-date,
+.main-nav-top-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-nav-top-logo img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.main-nav-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-nav-middle-menu-list {
+  display: none;
+}
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  .main-nav-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .main-nav-top-date {
+    align-items: flex-start;
+  }
+
+  .main-nav-top-weather {
+    align-items: flex-end;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .main-nav-middle-menu-list {
+    display: block;
+  }
+}
