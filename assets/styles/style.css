@@ -100,13 +100,81 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.main-nav-middle-menu-bar {
+  cursor: pointer;
+}
+
+.main-nav-middle-menu-bar i {
+  font-size: 2em;
+}
+
+.main-nav-middle-menu-bar span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
 }
 
 .main-nav-middle-menu-list {
   display: none;
 }
 
+.main-nav-middle-menu-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
 
+.main-nav-middle-menu-list ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-nav-middle-menu-bar:hover+.main-nav-middle-menu-list {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: fit-content;
+  min-width: 200px;
+  background-color: white;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  overflow: scroll;
+  text-align: end;
+  box-shadow: #333 2px 2px 5px;
+}
+
+.main-nav-middle-menu-bar:hover+.main-nav-middle-menu-list ul {
+  text-align: start;
+}
+
+.main-nav-middle-menu-bar:hover+.main-nav-middle-menu-list ul li {
+  border-bottom: 1px solid #696666;
+  padding: 5px 0;
+}
+
+.main-nav-middle-menu-bar:hover+.main-nav-middle-menu-list ul li a {
+  width: 100%;
+}
+
+.main-nav-middle-profile-button {
+  background-color: transparent;
+  border: none;
+}
+
+.main-nav-middle-profile-button span {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
 
 
 
@@ -115,6 +183,7 @@ body {
   .main-nav-top {
     flex-direction: row;
     justify-content: space-between;
+    
   }
 
   .main-nav-top-date {
@@ -126,9 +195,49 @@ body {
   }
 }
 
+.main-nav-bottom{
+  overflow-x: auto;
+  
+}
+.main-nav-bottom ul{
+  display:flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+  padding:0;
+  margin:0;
+  border-top: 2px solid rgb(79, 78, 78);
+  border-bottom: 2px solid rgb(79, 78, 78);
+  
+}
+
+.main-nav-bottom ul li{
+  padding: 4px 0;
+}
 
 @media screen and (min-width: 1024px) {
   .main-nav-middle-menu-list {
     display: block;
+  }
+
+  .main-nav-middle-menu-list ul {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .main-nav-middle-menu-bar {
+    /* display: none; */
+    visibility: hidden;
+  }
+
+  .main-nav-middle-menu-list-close-button {
+    display: none;
+  }
+
+  .main-nav-bottom ul{
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.8rem;
+   
   }
 }
